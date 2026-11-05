@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador EXCOBA Oficial - 90 Reactivos Únicos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- PANTALLA DE INICIO -->
+        <div id="start-screen" class="screen active">
+            <h1 class="title">SIMULADOR EXCOBA PRO</h1>
+            <p class="subtitle">Evaluación interactiva oficial con un banco exclusivo de 90 reactivos únicos y dinámicos (Física, Química, Biología, Matemáticas, Historia, Español y Geografía) basados en fuentes y temarios oficiales[cite: 1, 5].</p>
+            <button class="btn-main" onclick="startExam()">COMENZAR SIMULACRO (90 PREGUNTAS)</button>
+        </div>
+
+        <!-- PANTALLA DE EXAMEN -->
+        <div id="exam-screen" class="screen">
+            <header>
+                <h2>EXCOBA - Sistema Oficial de Práctica</h2>
+                <div class="timer" id="timer">01:30:00</div>
+            </header>
+            <div class="main-content">
+                <aside class="sidebar">
+                    <h3>Reactivos</h3>
+                    <div class="question-grid" id="question-grid"></div>
+                </aside>
+                <section class="content-area">
+                    <div class="question-header">
+                        <span id="question-category" class="badge">Área</span>
+                        <span id="progress-indicator">Pregunta 1 de 90</span>
+                    </div>
+                    <div class="question-box" id="question-text">Cargando reactivo...</div>
+                    <div class="interaction-area" id="interaction-container">
+                        <!-- El contenido dinámico (opciones, inputs numéricos con selector o zonas de arrastre) se genera por JS -->
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" onclick="prevQuestion()">Anterior</button>
+                        <button class="btn-primary" onclick="nextQuestion()">Siguiente</button>
+                    </div>
+                </section>
+            </div>
+            <footer>
+                <button class="btn-danger" onclick="finishExam()">Finalizar Examen</button>
+                <span id="exam-status">Respondidas: 0 / 90</span>
+            </footer>
+        </div>
+
+        <!-- PANTALLA DE RESULTADOS -->
+        <div id="results-screen" class="screen">
+            <h1 class="results-title">¡Simulacro Concluido!</h1>
+            <p class="results-desc">Tu puntuación global obtenida:</p>
+            <div id="final-score" class="score-display">0 / 90</div>
+            <button class="btn-main" onclick="location.reload()">Intentar Nuevamente</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
